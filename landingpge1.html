@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box
+        }
+        /* Set height of body and the document to 100% */
+        
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+            background: #E8F6F3;
+            background-size: cover;
+            opacity: 0.8;
+        }
+        /* Style tab links */
+        
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+        
+        .tablink:hover {
+            background-color: #777;
+        }
+        /* Style the tab content (and add height:100% for full page content) */
+        
+        .tabcontent {
+            color: #2F323A;
+            display: none;
+            padding: 200px 50px;
+            height: 100%;
+            margin-left: 0px;
+            text-align: center;
+            font-size: 30px;
+        }
+        
+        #Home {
+            /* background-color: lightcoral; */
+        }
+        
+        #News {
+            /* background-color: green; */
+        }
+        
+        #Contact {
+            /* background-color: blue; */
+        }
+        
+        #About {
+            /* background-color: orange; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="tablink" onclick="openPage('Home', this, '#2F323A')"><i class="fa fa-search" aria-hidden="true"></i>Search for books</button>
+    <button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">Show book as i read</button>
+    <button class="tablink" onclick="openPage('Contact', this, 'blue')">Update Profile</button>
+    <button class="tablink" onclick="openPage('About', this, 'orange')">Upadate password</button>
+
+    <div id="Home" class="tabcontent" style="font-size:20px">
+        <h3>Get books here !</h3>
+        <p>Get Books !</p>
+        <form action="/" method="post" class="form-group"></form>
+        <div class="form-row ">
+            <div class="col-auto my-1">
+                <select class="custom-select">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </div>
+
+        </div>
+    </div>
+    </form>
+    </div>
+
+    <div id="News" class="tabcontent" style="color: white;margin-left:30% ; margin-right:30%;">
+        <h2>Book Search</h2>
+
+
+        <form action="/" method="post" class="form-group" style="color: white;margin-left:30% ; margin-right:30%; margin-top:3%; font-family:Poppins;font-size: 18px; box-shadow: -10px 12px 20px;">
+            <div class="input-container" style="box-shadow: -10px 12px 20px;">
+
+                <i class="fa fa-envelope icon " style="color: white;"></i>
+                <input class="input-field" type="number" placeholder="Book ID" name="number" style="box-shadow: -10px 12px 20px;">
+            </div>
+
+            <!-- <div class=" input-container ;box-shadow: -10px 12px 20px; ">
+                <i class="fa fa-key icon " style="color: white; "></i>
+                <input class="input-field " type="text " placeholder="Password " name="psw " style="box-shadow: -10px 12px 20px; ">
+            </div> -->
+            <button class="btn btn-default">Login</button>
+    </div>
+
+    </form>
+
+    <div id="Contact" class="tabcontent">
+        <h3>Contact</h3>
+        <form action="/" method="post" class="form-group" style="margin-left:30% ; margin-right:30%; margin-top:1%; font-family:Poppins;font-size: 30px;"></form>
+        <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
+
+    <div id="About" class="tabcontent">
+        <h3>About</h3>
+        <p>Who we are and what we do.</p>
+    </div>
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+
+</html>
+
+</body>
+<!--- google font -->
